@@ -1,4 +1,4 @@
-/** Body Code **/
+/* Body Code */
 
 body, html{
     height: 100%;
@@ -11,7 +11,7 @@ body{
     background-image: url('../images/background.png');
 }
 
-/** Header Code **/
+/* Header Code */
 
 header{
     background-color: #ffffff;
@@ -43,6 +43,7 @@ header div#wrapper h1{
 
 header div#wrapper ul{
     float: right;
+    font-size: 0;
     list-style-type: none;
     text-align: left;
 }
@@ -54,6 +55,7 @@ header div#wrapper ul li{
     font-size: 16px;
     height: 90px;
     line-height: 90px;
+    text-align: center;
 }
 
 header div#wrapper ul li a{
@@ -63,12 +65,50 @@ header div#wrapper ul li a{
     text-decoration: none;
 }
 
-header div#wrapper ul li:nth-child(2) a{
-    border-left: #cccccc solid 1px;
+header div#wrapper ul li:nth-child(even){
+    -moz-user-select: none;
+    -webkit-user-select: none;
     border-right: #cccccc solid 1px;
+    display: inline;
+    margin: 0 0.5em;
+    position: relative;
+    user-select: none;
 }
 
-/** Section Code **/
+header div#wrapper ul li a:before{
+    content: '{';
+    color: rgba(119, 119, 119, 0.5);
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-size: 20px;
+    left: 2px;
+    line-height: 87px;
+    position: absolute;
+    opacity: 0;
+    transition: oapcity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+}
+
+header div#wrapper ul li a:after{
+    content: '}';
+    color: rgba(119, 119, 119, 0.5);
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-size: 20px;
+    line-height: 87px;
+    position: absolute;
+    right: 2px;
+    opacity: 0;
+    transition: oapcity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+}
+
+header div#wrapper ul li a:hover:before,
+header div#wrapper ul li a:hover:after{
+    opacity: 1;
+}
+
+/* Section Code */
 
 div#middle{
     margin: 35px auto;
@@ -228,7 +268,7 @@ div#middle section.portfolio div#wrapper div.thumbnail:nth-of-type(5){
     background-image: url('../images/image_05.jpg');
 }
 
-/** Footer Code **/
+/* Footer Code */
 
 footer{
     background-color: #666666;
